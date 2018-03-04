@@ -41,37 +41,7 @@ void draw_board()
 
 int get_clicked_square(int x, int y)
 {
-    int pos = 0;
-
-    if(y > 0 && y<200)
-    {
-        if(x > 0 && x < 200)
-            pos = 0;
-        else if(x > 200 && x < 400)
-            pos = 1;
-        else if(x > 400 && x < 600)
-            pos = 2;
-    }
-    else if(y > 200 && y < 400)
-    {
-        if(x > 0 && x < 200)
-            pos = 3;
-        else if(x > 200 && x < 400)
-            pos = 4;
-        else if(x > 400 && x < 600)
-            pos = 5;
-    }
-    else if(y > 400 && y < 600)
-    {
-        if(x > 0 && x < 200)
-            pos = 6;
-        else if(x > 200 && x < 400)
-            pos = 7;
-        else if(x > 400 && x < 600)
-            pos = 8;
-    }
-
-    return pos;
+    return 3 * (y/200) + (x/200);
 }
 
 int move_x_player(int x, int y)
